@@ -1,0 +1,203 @@
+/* =========================================
+   Alzikrayat Gallery
+   Required Views:
+   3 Columns / 4 Columns / List / Slider
+   ========================================= */
+
+.photo-gallery {
+    width: 100%;
+}
+
+
+/* =========================================
+   Gallery Toolbar
+   ========================================= */
+
+.gallery-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================================
+   3 COLUMN VIEW
+   ========================================= */
+
+.gallery-three-column {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.gallery-three-column .gallery-item {
+    width: 100%;
+}
+
+
+/* =========================================
+   4 COLUMN VIEW
+   ========================================= */
+
+.gallery-four-column {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.gallery-four-column .gallery-item {
+    width: 100%;
+}
+
+.gallery-four-column .card {
+    height: 100%;
+}
+
+.gallery-four-column .gallery-image {
+    height: 200px !important;
+}
+
+
+/* =========================================
+   LIST VIEW
+   ========================================= */
+
+.gallery-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gallery-list .gallery-item {
+    width: 100%;
+}
+
+.gallery-list .card {
+    display: flex;
+    flex-direction: row;
+    height: 220px !important;
+}
+
+.gallery-list .gallery-image {
+    width: 280px;
+    height: 220px !important;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.gallery-list .card-body {
+    flex: 1;
+}
+
+
+/* =========================================
+   FULL-WIDTH SLIDER
+   ========================================= */
+
+.gallery-slider {
+    position: relative;
+    width: 100%;
+}
+
+.gallery-slider .gallery-item {
+    display: none;
+    width: 100%;
+}
+
+.gallery-slider .gallery-item:first-child {
+    display: block;
+}
+
+.gallery-slider .card {
+    width: 100%;
+    border: none;
+}
+
+.gallery-slider .gallery-image {
+    width: 100%;
+    height: 500px !important;
+    object-fit: cover;
+}
+
+.gallery-slider .card-body {
+    padding: 20px;
+}
+
+
+/* =========================================
+   Gallery Images
+   ========================================= */
+
+.gallery-image {
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.02);
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 1199px) {
+
+    .gallery-four-column {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 991px) {
+
+    .gallery-three-column {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-four-column {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .gallery-three-column {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-four-column {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-list .card {
+        flex-direction: column;
+        height: auto !important;
+    }
+
+    .gallery-list .gallery-image {
+        width: 100%;
+        height: 250px !important;
+    }
+
+    .gallery-slider .gallery-image {
+        height: 300px !important;
+    }
+
+    .gallery-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .gallery-toolbar .btn-group {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
